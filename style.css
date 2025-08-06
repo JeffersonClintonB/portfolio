@@ -1,6 +1,4 @@
 
-
-
 .start-button {
   background-color: #000;
   color: #fff;
@@ -38,17 +36,22 @@
     padding: 20px;
     text-align: center;
     justify-content: center;
+    font-family: sans-serif;
+    font-size: large;
 }
 footer{
-    background-color: aliceblue;
-    text-align: center;
+    
     padding:10px;
 }
 
-
+.new1{
+  color: #fff;
+  background-color: #d7cd13;
+}
 
 .list{
-    background-color: rgb(239, 130, 190);
+    background-color: rgb(130, 160, 181);
+    
 }
 .new{
     padding: 20px;
@@ -56,6 +59,7 @@ footer{
     border: 50px;
 }
 img{
-  border-radius: 45%;
-  padding: 0.3%
+  width: 15%;
+  height: auto;
+  
 }
