@@ -1,0 +1,28 @@
+
+body{
+    background-color: bisque;
+}
+
+.index{
+    text-align: center;
+    font-family: sans-serif;
+    background-color: rgb(244, 211, 211);
+    border-radius: 10px;
+    margin: 0 10% 0 10%;
+    
+}
+
+#indexTitle{
+    font-style: italic;
+}
+
+.buttonp1{
+    border-radius: 100px;
+    background-color: rgba(130, 195, 199, 0.936);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vh; 
+  border: 1px solid #ccc
+}
+
