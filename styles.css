@@ -8,7 +8,7 @@ body{
     font-family: sans-serif;
     background-color: rgb(244, 211, 211);
     border-radius: 10px;
-    margin: 0 10% 0 10%;
+    margin: 0 40% 0 40%;
     
 }
 
@@ -19,10 +19,14 @@ body{
 .buttonp1{
     border-radius: 100px;
     background-color: rgba(130, 195, 199, 0.936);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2vh; 
-  border: 1px solid #ccc
+  transition: background-color 1s ease, transform 1s ease;
+  padding: 10px;
+  display: block;
+  margin: auto;
+}
+.buttonp1:hover{
+background-color: rgb(250, 212, 252);
+    transform: scale(1.1,1.1);
+    cursor: pointer;
 }
 
