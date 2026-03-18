@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="index">
-      <h1 id="indexTitle">Portfolio</h1>
-      <p>
-        Hi! This is my portfolio<br />
-        Click below to know more
-      </p>
-    </div>
+<head>
 
-    <button class="buttonp1"><a href="secondPage.html">clickMe</a></button>
-  </body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jefferson | Portfolio</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<div class="container reveal">
+
+<img src="JeffPic.jpeg" alt="Jefferson">
+
+<h1>Jefferson Clinton B</h1>
+
+<p class="subtitle">
+<span id="typing"></span>
+</p>
+
+<div class="buttons">
+
+<button onclick="openModal('about')">👤 About</button>
+
+<button onclick="openModal('exp')">💼 Experience</button>
+
+<button onclick="openModal('skills')">🧠 Skills</button>
+
+<button onclick="openModal('edu')">🎓 Education</button>
+
+</div>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">✕</span>
+
+<h2 id="modalTitle"></h2>
+
+<div id="modalText"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
