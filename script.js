@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 // =============================================
 // Jefferson's Portfolio Script!!
 // i learned most of this from a youtube video lol
@@ -177,7 +177,7 @@ console.log('%c Hi!! 👋', 'font-size: 24px; color: #ffb3c6; font-weight: bold;
 console.log('%c Welcome to Jefferson\'s portfolio source code!', 'font-size: 14px; color: #b5ead7;');
 console.log('%c Built with love (and a lot of Stack Overflow) 😅', 'font-size: 12px; color: #c9b8f5;');
 console.log('%c Feel free to look around — just don\'t judge the messy code pls 🙏', 'font-size: 12px; color: #ffd97d;');
-=======
+
 function openModal(type){
 
 const modal=document.getElementById("modal");
@@ -347,4 +347,4 @@ typeEffect();
 }
 
 typeEffect();
->>>>>>> 5e030fa11f1e431d45da62d127b6a626dfdaeceb
+
