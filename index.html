@@ -1,329 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- i spent 3 hours picking this font lol -->
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel ="icon" type="image" href="logo.svg"/>
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Jefferson's Portfolio!!</title>
-  <link rel="stylesheet" href="styles.css" />
+<title>Jefferson</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel ="icon" href="logo.svg" type="image/x-icon">
+
 </head>
+
 <body>
 
-  <!-- little floating stars i added for fun!! -->
-  <div class="star s1">✦</div>
-  <div class="star s2">✧</div>
-  <div class="star s3">✦</div>
-  <div class="star s4">✧</div>
-  <div class="star s5">✦</div>
+<div id="particles"></div>
 
-  <!-- ===== NAVBAR ===== -->
-  <!-- i watched a youtube tutorial for this part -->
-  <nav class="navbar">
-    <div class="nav-logo">✨ Jeff's Portfolio</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#" onclick="showSection('home')">🏠 Home</a>
-      <a href="#" onclick="showSection('about')">👋 About</a>
-      <a href="#" onclick="showSection('skills')">⚡ Skills</a>
-      <a href="#" onclick="showSection('experience')">💼 Work</a>
-      <a href="#" onclick="showSection('education')">🎓 Edu</a>
-      <a href="#" onclick="showSection('contact')">📬 Contact</a>
-    </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()">☰</button>
-  </nav>
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-  <!-- ===== MAIN WRAPPER ===== -->
-  <main class="wrapper">
+<div class="container reveal">
 
-    <!-- ============ HOME ============ -->
-    <section class="section active" id="home">
+<img src="JeffPic.jpeg" alt="Jefferson">
 
-      <!-- the wobbly card took me forever -->
-      <div class="hero-card">
-        <div class="hero-top">
-          <div class="avatar-blob">
-            <img src="JeffPic.jpeg" alt="Jefferson" class="avatar-img" />
-          </div>
-          <div class="hero-text">
-            <p class="hi-text">hi there!! 👋</p>
-            <h1 class="hero-name">I'm Jefferson<br/>Clinton B <span class="waving">🌟</span></h1>
-            <!-- TODO: update this when i get promoted lol -->
-            <p class="hero-role">
-              <span class="role-pill">🔍 QA Engineer @ Amazon</span>
-            </p>
-            <p class="hero-desc">
-              Engineering grad (2024) who loves breaking things on purpose 😅
-              and slowly learning to build them too!
-            </p>
-          </div>
-        </div>
+<h1>Jefferson Clinton B</h1>
 
-        <!-- i copy-pasted the button style and tweaked the colors -->
-        <div class="hero-btns">
-          <button class="btn-pink" onclick="showSection('skills')">my skills ⚡</button>
-          <button class="btn-outline" onclick="showSection('contact')">say hi! 👋</button>
-        </div>
-      </div>
+<p class="subtitle">
+<span id="typing"></span>
+</p>
 
-      <!-- fun facts (my friend suggested this idea) -->
-      <div class="fun-facts">
-        <div class="fact-card pink">
-          <div class="fact-num">1+</div>
-          <div class="fact-lbl">year at Amazon 🏢</div>
-        </div>
-        <div class="fact-card mint">
-          <div class="fact-num">100+</div>
-          <div class="fact-lbl">bugs found 🐛</div>
-        </div>
-        <div class="fact-card yellow">
-          <div class="fact-num">∞</div>
-          <div class="fact-lbl">cups of chai ☕</div>
-        </div>
-        <div class="fact-card lavender">
-          <div class="fact-num">2024</div>
-          <div class="fact-lbl">B.E graduate 🎓</div>
-        </div>
-      </div>
+<div class="buttons">
 
-      <!-- tags!! i learned about flexbox wrap just for this -->
-      <div class="tag-cloud">
-        <span class="tag">☕ Java</span>
-        <span class="tag">🐬 MySQL</span>
-        <span class="tag">🌐 HTML/CSS</span>
-        <span class="tag">✅ QA Testing</span>
-        <span class="tag">📖 Kindle</span>
-        <span class="tag">🐛 Bug Reports</span>
-        <span class="tag">📱 JS (learning!!)</span>
-      </div>
+<button onclick="openModal('about')">👤 About</button>
 
-    </section>
+<button onclick="openModal('exp')">💼 Experience</button>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section" id="about">
-      <h2 class="section-title">about me 👋</h2>
-      <p class="section-sub">a little bit about who i am!!</p>
+<button onclick="openModal('skills')">🧠 Skills</button>
 
-      <div class="about-grid">
-        <div class="about-photo-col">
-          <div class="photo-frame">
-            <img src="JeffPic.jpeg" alt="Jefferson Clinton" class="about-img" />
-            <div class="photo-sticker top-right">😄</div>
-            <div class="photo-sticker bottom-left">Chennai 📍</div>
-          </div>
-        </div>
+<button onclick="openModal('eduCATION')">🎓 Education</button>
 
-        <div class="about-text-col">
-          <!-- wrote this at 2am please don't judge -->
-          <div class="about-bubble">
-            <p>heyyy!! 😊 I'm Jefferson, a freshly graduated engineer from Chennai.
-            I currently work at <strong>Amazon</strong> as a Manual Test Engineer — basically
-            i find bugs in Kindle devices for a living and it's actually really fun!!</p>
-          </div>
-          <div class="about-bubble mint">
-            <p>In my free time I'm learning <strong>frontend development</strong>
-            (this website is proof lol 😂), playing with Java, and watching a LOT
-            of tech tutorials on YouTube.</p>
-          </div>
-          <div class="about-bubble yellow">
-            <p>My dream is to become an <strong>automation engineer</strong> someday —
-            but for now i'm enjoying every step of the journey!! 🚀</p>
-          </div>
+</div>
 
-          <!-- little info table i made from scratch!! -->
-          <div class="info-table">
-            <div class="info-row"><span>📍 Location</span><span>Chennai, India</span></div>
-            <div class="info-row"><span>💼 Job</span><span>Amazon QA (L2)</span></div>
-            <div class="info-row"><span>🎓 Degree</span><span>B.E CCE — 2024</span></div>
-            <div class="info-row"><span>🟢 Status</span><span class="status-open">open to opportunities!!</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <!-- ============ SKILLS ============ -->
-    <section class="section" id="skills">
-      <h2 class="section-title">my skills ⚡</h2>
-      <p class="section-sub">stuff i know (and stuff i'm still figuring out 😅)</p>
 
-      <!-- the bars!! i'm SO proud of these -->
-      <div class="skills-section">
-        <div class="skill-row">
-          <div class="skill-label">🔍 QA Testing <span class="skill-note">(my main thing!)</span></div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar pink-bar" style="--w:90%"></div>
-            <span class="skill-pct">90%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">☕ Java <span class="skill-note">(love it)</span></div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar mint-bar" style="--w:80%"></div>
-            <span class="skill-pct">80%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">🐬 MySQL <span class="skill-note">(SELECT * FTW)</span></div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar yellow-bar" style="--w:70%"></div>
-            <span class="skill-pct">70%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">🌐 HTML/CSS/JS <span class="skill-note">(this site is proof!)</span></div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar lavender-bar" style="--w:60%"></div>
-            <span class="skill-pct">60%</span>
-          </div>
-        </div>
-      </div>
+<!-- MODAL -->
 
-      <div class="skill-cards">
-        <div class="skill-card">
-          <div class="skill-card-emoji">🔍</div>
-          <div class="skill-card-title">Quality Assurance</div>
-          <div class="skill-card-body">Test cases, bug reports, regression testing, Kindle device testing</div>
-        </div>
-        <div class="skill-card mint-card">
-          <div class="skill-card-emoji">💻</div>
-          <div class="skill-card-title">Development</div>
-          <div class="skill-card-body">Java OOP, MySQL, HTML & CSS, a tiny bit of JS (getting better every day!!)</div>
-        </div>
-        <div class="skill-card yellow-card">
-          <div class="skill-card-emoji">🛠️</div>
-          <div class="skill-card-title">Soft Skills</div>
-          <div class="skill-card-body">Documentation, team communication, attention to detail, learning fast!!</div>
-        </div>
-      </div>
-    </section>
+<div id="modal" class="modal">
 
-    <!-- ============ EXPERIENCE ============ -->
-    <section class="section" id="experience">
-      <h2 class="section-title">work experience 💼</h2>
-      <p class="section-sub">places i've been and things i've done!!</p>
+<div class="modal-content">
 
-      <!-- my first real job!! -->
-      <div class="exp-card">
-        <div class="exp-header">
-          <div class="exp-logo">📦</div>
-          <div>
-            <div class="exp-role">Associate Quality Services (L2) 🌟</div>
-            <div class="exp-company">Amazon • 2024 – present</div>
-          </div>
-          <div class="exp-badge">current job!!</div>
-        </div>
-        <ul class="exp-list">
-          <li>🔍 Manual testing of Kindle products across many test cycles</li>
-          <li>🐛 Detailed bug reporting and quality documentation</li>
-          <li>🤝 Working with cross-functional teams for quality releases</li>
-          <li>📋 Validating product behaviour against expected specs</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag small">Manual Testing</span>
-          <span class="tag small">Kindle</span>
-          <span class="tag small">Bug Reporting</span>
-          <span class="tag small">QA</span>
-        </div>
-      </div>
+<span class="close" onclick="closeModal()">✕</span>
 
-      <div class="exp-card mint-exp">
-        <div class="exp-header">
-          <div class="exp-logo">🖥️</div>
-          <div>
-            <div class="exp-role">Front-end Developer (personal projects) 🎨</div>
-            <div class="exp-company">Self-taught • 2022 – present</div>
-          </div>
-          <div class="exp-badge mint-badge">side project!!</div>
-        </div>
-        <ul class="exp-list">
-          <li>🌐 Built this portfolio website (you're looking at it!!)</li>
-          <li>🎨 Learned HTML, CSS, and a bit of JS on YouTube</li>
-          <li>🤖 Used AI tools to help me code faster and learn more</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag small">HTML/CSS</span>
-          <span class="tag small">JavaScript</span>
-          <span class="tag small">Learning!!</span>
-        </div>
-      </div>
-    </section>
+<h2 id="modalTitle"></h2>
 
-    <!-- ============ EDUCATION ============ -->
-    <section class="section" id="education">
-      <h2 class="section-title">education 🎓</h2>
-      <p class="section-sub">where i studied!!</p>
+<div id="modalText"></div>
 
-      <div class="edu-card">
-        <div class="edu-top">
-          <span class="edu-emoji">🏫</span>
-          <div>
-            <div class="edu-degree">B.E — Computer & Communication Engineering</div>
-            <div class="edu-school">Panimalar Engineering College, Chennai</div>
-          </div>
-        </div>
-        <div class="edu-meta">
-          <span class="edu-pill">🗓️ Class of 2024</span>
-          <span class="edu-pill mint-pill">✅ Completed</span>
-          <span class="edu-pill yellow-pill">📍 Chennai</span>
-        </div>
-        <!-- little personal note -->
-        <div class="edu-note">
-          💬 "4 years of hard work and chai ☕ — totally worth it!!"
-        </div>
-      </div>
-    </section>
+</div>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section" id="contact">
-      <h2 class="section-title">say hi!! 📬</h2>
-      <p class="section-sub">i promise i reply fast (usually) 😊</p>
+</div>
 
-      <div class="contact-wrap">
-        <div class="contact-card">
-          <div class="contact-item">
-            <span class="contact-emoji">📍</span>
-            <div><div class="contact-label">Location</div><div class="contact-val">Chennai, India</div></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-emoji">🐙</span>
-            <div>
-              <div class="contact-label">GitHub</div>
-              <div class="contact-val"><a href="https://github.com/JeffersonClintonB" target="_blank">JeffersonClintonB</a></div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-emoji">💼</span>
-            <div><div class="contact-label">Current Role</div><div class="contact-val">Amazon — Manual QA (L2)</div></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-emoji">🟢</span>
-            <div><div class="contact-label">Status</div><div class="contact-val status-open">open to opportunities!!</div></div>
-          </div>
-        </div>
+<script src="script.js"></script>
 
-        <!-- message for visitors -->
-        <div class="contact-note">
-          <p>✨ thanks for visiting my portfolio!!</p>
-          <p>i built this completely from scratch (with a little help from YouTube and AI lol)</p>
-          <p>if you like my work or want to connect, feel free to reach out!! 😊🙏</p>
-          <a href="https://github.com/JeffersonClintonB" target="_blank" class="btn-pink contact-btn">
-            visit my GitHub 🐙
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- footer!! took me a while to make it stick to the bottom lol -->
-  <footer class="footer">
-    <p>made with 💖 by Jefferson Clinton B &nbsp;•&nbsp; 2026</p>
-    <p class="footer-sub">/* yes i coded this myself!! (mostly 😅) */</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
