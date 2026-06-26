@@ -773,6 +773,18 @@ body {
   font-family: var(--font-body);
 }
 
+.sec-contact-card {
+  background: var(--pink-light);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: fit-content;
+}
+.btn-res{
+  border: none;
+}
+
 /* =============================================
    FOOTER
    ============================================= */
