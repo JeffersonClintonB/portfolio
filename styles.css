@@ -705,7 +705,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  align-items: left;
+  align-items: start;
 }
 
 .contact-card {
@@ -780,9 +780,6 @@ body {
   margin: 10px;
   text-align: center;
   width: fit-content;
-  font-family: 'Courier New', monospace;
-  display: grid;
-  gap: 15px;
 }
 .btn-res{
   border: none;

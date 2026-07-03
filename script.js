@@ -8,8 +8,8 @@
 // --- show/hide sections (this took me forever to figure out) ---
 function showSection(id) {
   // hide all sections first
-  let sections = document.querySelectorAll('.section');
-  for (let i = 0; i < sections.length; i++) {
+  var sections = document.querySelectorAll('.section');
+  for (var i = 0; i < sections.length; i++) {
     sections[i].classList.remove('active');
   }
 
