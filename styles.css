@@ -445,7 +445,6 @@ body {
 .info-row:last-child { border-bottom: none; }
 .info-row span:first-child { color: var(--text2); }
 .info-row span:last-child  { font-weight: 600; color: var(--text); text-align: right; }
-.status-open { color: var(--mint-dark) !important; }
 
 /* =============================================
    SKILLS
@@ -773,17 +772,7 @@ body {
   font-family: var(--font-body);
 }
 
-.sec-contact-card {
-  background: var(--pink-light);
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
-  width: fit-content;
-}
-.btn-res{
-  border: none;
-}
+
 
 /* =============================================
    FOOTER
