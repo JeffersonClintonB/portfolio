@@ -18,6 +18,8 @@
   --pink-dark:  #e8839a;
   --mint:       #b5ead7;
   --mint-light: #f0faf5;
+  --gold: #FFD700;
+  --grey: #e0dee7;
   --mint-dark:  #6cc4a1;
   --yellow:     #ffd97d;
   --yellow-light: #fffbef;
@@ -30,8 +32,8 @@
   --text2:      #7a6b80;
   --text3:      #b0a0b8;
   --radius:     16px;
-  --font-hand:  'Caveat', cursive;
-  --font-body:  'Nunito', sans-serif;
+  --font-hand:  Amazon Ember Duospace;
+  --font-body:  Amazon Ember Display Light ;
   --shadow:     0 4px 20px rgba(180, 140, 180, 0.15);
   --shadow-lg:  0 8px 32px rgba(180, 140, 180, 0.22);
 }
@@ -771,6 +773,21 @@ body {
   text-decoration: none;
   font-family: var(--font-body);
 }
+
+
+.cert-bubble{
+  background: var(--pink-light);
+  border: 1.5px dashed var(--pink-dark);
+  border-radius: 16px 16px 16px 4px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: .5;
+ margin-top: 35px;
+}
+.cert-bubble.mint   { background: var(--mint-light);   border-color: var(--mint);   border-radius: 16px 16px 4px 16px; margin-top: 15px;}
+.cert-bubble.yellow { background: var(--yellow-light); border-color: var(--yellow); border-radius: 4px 16px 4px 16px; margin-top: 15px;}
+
 
 
 
