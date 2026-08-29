@@ -32,7 +32,7 @@
   --text2:      #7a6b80;
   --text3:      #b0a0b8;
   --radius:     16px;
-  --font-hand:  Amazon Ember Duospace;
+  --font-hand:  Amazon Ember Display light ;
   --font-body:  Amazon Ember Display Light ;
   --shadow:     0 4px 20px rgba(180, 140, 180, 0.15);
   --shadow-lg:  0 8px 32px rgba(180, 140, 180, 0.22);
@@ -88,10 +88,12 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 32px;
-  background: rgba(255, 253, 249, 0.92);
+  background: rgba(255, 253, 249, 0);
   backdrop-filter: blur(10px);
-  border-bottom: 2px dashed var(--pink);
   gap: 16px;
+  backdrop-filter: blur(3px);
+  border-top:1px solid rgba(255,255,255,0.3);
+  border-left:1px solid rgba(255,255,255,0.4);
 }
 
 .nav-logo {
@@ -418,16 +420,17 @@ body {
 
 /* speech bubble style!! i love this -->*/
 .about-bubble {
-  background: var(--pink-light);
+  background: rgba(255,255,255,0.4);
   border: 1.5px solid var(--pink);
   border-radius: 16px 16px 16px 4px;
   padding: 14px 18px;
   font-size: 14px;
   color: var(--text);
   line-height: 1.7;
+  backdrop-filter: blur(3px);
 }
-.about-bubble.mint   { background: var(--mint-light);   border-color: var(--mint);   border-radius: 16px 16px 4px 16px; }
-.about-bubble.yellow { background: var(--yellow-light); border-color: var(--yellow); }
+.about-bubble.mint   {border-color: var(--mint);   border-radius: 16px 16px 4px 16px; }
+.about-bubble.yellow {border-color: var(--yellow); }
 
 .info-table {
   background: white;
@@ -622,6 +625,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  list-style-type: disc;
 }
 .exp-list li {
   font-size: 14px;
@@ -652,7 +656,7 @@ body {
   margin-bottom: 16px;
 }
 
-.edu-emoji { font-size: 40px; flex-shrink: 0; }
+
 
 .edu-degree {
   font-family: var(--font-hand);
@@ -697,6 +701,7 @@ body {
   border-radius: 10px;
   padding: 10px 16px;
   font-style: italic;
+  width: fit-content;
 }
 
 /* =============================================
@@ -776,17 +781,32 @@ body {
 
 
 .cert-bubble{
-  background: var(--pink-light);
-  border: 1.5px dashed var(--pink-dark);
+  background: rgba(255,255,255,0.4);
+  border: 1.5px solid var(--pink-dark);
   border-radius: 16px 16px 16px 4px;
   padding: 14px 18px;
   font-size: 14px;
   color: var(--text);
   line-height: .5;
  margin-top: 35px;
+ width: fit-content;
 }
-.cert-bubble.mint   { background: var(--mint-light);   border-color: var(--mint);   border-radius: 16px 16px 4px 16px; margin-top: 15px;}
-.cert-bubble.yellow { background: var(--yellow-light); border-color: var(--yellow); border-radius: 4px 16px 4px 16px; margin-top: 15px;}
+.cert-bubble.mint   { border-color: var(--mint);   border-radius: 16px 16px 4px 16px; margin-top: 15px;}
+.cert-bubble.yellow {border-color: var(--yellow); border-radius: 4px 16px 4px 16px; margin-top: 15px;}
+
+.cert-bubble:hover {
+  transform: rotate(0deg) scale(1.005);
+}
+
+.cert-card{
+  background: white;
+  border: 2px solid var(--pink-light);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 28px;
+  width: fit-content;
+}
 
 
 
