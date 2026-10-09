@@ -1,4 +1,3 @@
- HEAD
 // =============================================
 // Jefferson's Portfolio Script!!
 // i learned most of this from a youtube video lol
@@ -52,27 +51,21 @@ document.addEventListener('click', function(e) {
 // so satisfying to watch!! 🎉
 // =============================================
 
-// re-trigger skill bar animation when skills section is clicked
-// (i had a bug where the bars didn't animate after first visit)
 var skillBars = document.querySelectorAll('.skill-bar');
 
 function animateSkillBars() {
   skillBars.forEach(function(bar) {
-    // little trick to restart css animation!!
     bar.style.animation = 'none';
-    // this line forces a "reflow" - i googled what that means
     void bar.offsetHeight;
     bar.style.animation = '';
   });
 }
 
-// watch for when skills section becomes active
 var skillsSection = document.getElementById('skills');
 if (skillsSection) {
   var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       if (skillsSection.classList.contains('active')) {
-        // small delay so it looks smoother
         setTimeout(animateSkillBars, 100);
       }
     });
@@ -99,40 +92,33 @@ var currentChar = 0;
 var isDeleting = false;
 var typingEl = document.getElementById('typing-text');
 
-// only run if the element exists on the page
 if (typingEl) {
   function doTyping() {
     var phrase = typingPhrases[currentPhrase];
 
     if (!isDeleting) {
-      // typing forward
       typingEl.textContent = phrase.slice(0, currentChar + 1);
       currentChar++;
 
       if (currentChar === phrase.length) {
-        // done typing!! wait a bit then delete
         isDeleting = true;
         setTimeout(doTyping, 1800);
         return;
       }
     } else {
-      // deleting
       typingEl.textContent = phrase.slice(0, currentChar - 1);
       currentChar--;
 
       if (currentChar === 0) {
-        // done deleting! move to next phrase
         isDeleting = false;
         currentPhrase = (currentPhrase + 1) % typingPhrases.length;
       }
     }
 
-    // speed: typing is slower than deleting
     var speed = isDeleting ? 40 : 80;
     setTimeout(doTyping, speed);
   }
 
-  // small delay before starting so page loads first
   setTimeout(doTyping, 800);
 }
 
@@ -149,7 +135,6 @@ if (logo) {
   logo.addEventListener('click', function() {
     logoClicks++;
 
-    // reset counter after 2 seconds
     clearTimeout(logoTimer);
     logoTimer = setTimeout(function() {
       logoClicks = 0;
@@ -157,7 +142,6 @@ if (logo) {
 
     if (logoClicks >= 5) {
       logoClicks = 0;
-      // surprise!! 🎉
       document.body.style.transition = 'filter 0.5s';
       document.body.style.filter = 'hue-rotate(180deg)';
       setTimeout(function() {
@@ -179,172 +163,136 @@ console.log('%c Built with love (and a lot of Stack Overflow) 😅', 'font-size:
 console.log('%c Feel free to look around — just don\'t judge the messy code pls 🙏', 'font-size: 12px; color: #ffd97d;');
 
 function openModal(type){
+  const modal=document.getElementById("modal");
+  const title=document.getElementById("modalTitle");
+  const text=document.getElementById("modalText");
 
-const modal=document.getElementById("modal");
-const title=document.getElementById("modalTitle");
-const text=document.getElementById("modalText");
+  if(type === "about") {
+    title.innerText = "About Me";
+    text.innerHTML = "Engineering graduate (2024) currently working as a Manual Test Engineer at Amazon. Passionate about quality engineering, automation and learning new tech.";
+  }
 
-if(type==="about"){
+  if(type === "exp") {
+    title.innerText = "Experience";
+    text.innerHTML = "Associate Quality Services (L2) at Amazon working on Kindle products. Experienced in manual testing, bug reporting and quality validation.";
+  }
 
-title.innerText="About Me";
+  if(type === "skills") {
+    title.innerText = "Skills";
+    text.innerHTML = `
+      <div class="skill">
+      Java
+      <div class="bar"><div class="fill" style="--skill:80%"></div></div>
+      </div>
 
-text.innerHTML=
-"Engineering graduate (2024) currently working as a Manual Test Engineer at Amazon. Passionate about quality engineering, automation and learning new tech.";
+      <div class="skill">
+      MySQL
+      <div class="bar"><div class="fill" style="--skill:70%"></div></div>
+      </div>
 
-}
+      <div class="skill">
+      Frontend
+      <div class="bar"><div class="fill" style="--skill:60%"></div></div>
+      </div>
 
-if(type==="exp"){
+      <div class="skill">
+      QA Testing
+      <div class="bar"><div class="fill" style="--skill:90%"></div></div>
+      </div>
+    `;
+  }
 
-title.innerText="Experience";
+  if(type === "edu") {
+    title.innerText = "Education";
+    text.innerHTML = "B.E Computer & Communication Engineering — Panimalar Engineering College (2024).";
+  }
 
-text.innerHTML=
-"Associate Quality Services (L2) at Amazon working on Kindle products. Experienced in manual testing, bug reporting and quality validation.";
-
-}
-
-if(type==="skills"){
-
-title.innerText="Skills";
-
-text.innerHTML=`
-
-<div class="skill">
-Java
-<div class="bar"><div class="fill" style="--skill:80%"></div></div>
-</div>
-
-<div class="skill">
-MySQL
-<div class="bar"><div class="fill" style="--skill:70%"></div></div>
-</div>
-
-<div class="skill">
-Frontend
-<div class="bar"><div class="fill" style="--skill:60%"></div></div>
-</div>
-
-<div class="skill">
-QA Testing
-<div class="bar"><div class="fill" style="--skill:90%"></div></div>
-</div>
-
-`;
-
-}
-
-if(type==="edu"){
-
-title.innerText="Education";
-
-text.innerHTML=
-"B.E Computer & Communication Engineering — Panimalar Engineering College (2024).";
-
-}
-
-modal.classList.add("show");
-
+  modal.classList.add("show");
 }
 
 function closeModal(){
-document.getElementById("modal").classList.remove("show");
+  document.getElementById("modal").classList.remove("show");
 }
 
+window.onclick = function(event){
+  const modal = document.getElementById("modal");
+  if(event.target === modal){
+    closeModal();
+  }
+};
 
-/* CLOSE MODAL OUTSIDE */
-
-window.onclick=function(event){
-
-const modal=document.getElementById("modal");
-
-if(event.target===modal){
-closeModal();
-}
-
-}
-
-
-/* ESC CLOSE */
-
-document.addEventListener("keydown",function(e){
-
-if(e.key==="Escape"){
-closeModal();
-}
-
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    closeModal();
+  }
 });
 
-
-/* PARTICLES */
-
-const particles=document.getElementById("particles");
-
-for(let i=0;i<40;i++){
-
-const p=document.createElement("span");
-
-p.style.left=Math.random()*100+"%";
-
-p.style.animationDuration=(5+Math.random()*10)+"s";
-
-particles.appendChild(p);
-
+const particles = document.getElementById("particles");
+if (particles) {
+  for(let i=0;i<40;i++){
+    const p=document.createElement("span");
+    p.style.left = Math.random()*100 + "%";
+    p.style.animationDuration = (5 + Math.random()*10) + "s";
+    particles.appendChild(p);
+  }
 }
-
 
 /* THEME TOGGLE */
+const themeToggleBtn = document.getElementById('themeToggle');
+const storedTheme = localStorage.getItem('portfolio-theme');
+const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = storedTheme || (prefersDarkMode ? 'dark' : 'light');
 
-function toggleTheme(){
+function applyTheme(theme) {
+  const isLight = theme === 'light';
+  document.body.classList.toggle('light', isLight);
+  document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
 
-document.body.classList.toggle("light");
-
-const btn=document.querySelector(".theme-toggle");
-
-if(document.body.classList.contains("light")){
-btn.innerText="☀️";
-}else{
-btn.innerText="🌙";
+  if (themeToggleBtn) {
+    themeToggleBtn.textContent = isLight ? '☀️' : '🌙';
+    themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+  }
 }
 
+function toggleTheme() {
+  const currentTheme = document.body.classList.contains('light') ? 'light' : 'dark';
+  const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('portfolio-theme', nextTheme);
+  applyTheme(nextTheme);
 }
 
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', toggleTheme);
+}
+
+applyTheme(initialTheme);
 
 /* TYPING ANIMATION */
-
-const roles=[
-"Manual Test Engineer",
-"Tech Enthusiast",
-"Beginner Developer"
+const roles = [
+  "Manual Test Engineer",
+  "Tech Enthusiast",
+  "Beginner Developer"
 ];
 
-let roleIndex=0;
-let charIndex=0;
+let roleIndex = 0;
+let charIndex = 0;
 
 function typeEffect(){
+  const typing = document.getElementById("typing");
 
-const typing=document.getElementById("typing");
-
-if(charIndex<roles[roleIndex].length){
-
-typing.innerHTML+=roles[roleIndex].charAt(charIndex);
-
-charIndex++;
-
-setTimeout(typeEffect,70);
-
-}
-
-else{
-
-setTimeout(()=>{
-typing.innerHTML="";
-charIndex=0;
-roleIndex=(roleIndex+1)%roles.length;
-typeEffect();
-},2000);
-
-}
-
+  if (typing && charIndex < roles[roleIndex].length) {
+    typing.innerHTML += roles[roleIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 70);
+  }
+  else if (typing) {
+    setTimeout(() => {
+      typing.innerHTML = "";
+      charIndex = 0;
+      roleIndex = (roleIndex + 1) % roles.length;
+      typeEffect();
+    }, 2000);
+  }
 }
 
 typeEffect();
-
